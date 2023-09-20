@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "Anurati";
+    src: url('Anurati-Regular.otf') format('otf');
+}
+
+body {
+    background-image: linear-gradient(to bottom right , #65DEF1, #F87575);
+}
+
+div {
+    margin: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anurati";
+}
+  
+@keyframes spin {
+    0% {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+    100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+}
+  
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 100%;
+    /* background-color: gray; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%,-75%);
+}
+  
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: spin 30s ease infinite both;
+    animation-delay: 0.5s;
+    transform: translate(-50%,-50%);
+}
+  
+.cubeface {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    opacity: 0.95;
+    outline: 2px solid black;
+    outline-offset: -2px;
+    border-radius: 10px;
+}
+  
+.front  {
+    transform: rotateY(0deg) translateZ(100px);
+    /* background-color: white; */
+}
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+    /* background-color: lime; */
+}
+.back {
+    transform: rotateY(180deg) translateZ(100px);
+    /* background-color: yellow; */
+  }
+.left {
+    transform: rotateY(-90deg) translateZ(100px);
+    /* background-color: orange; */
+  }
+.top {
+    transform: rotateX( 90deg) translateZ(100px);
+    /* background-color: red; */
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    /* background-color: blue; */
+}
